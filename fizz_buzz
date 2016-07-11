@@ -22,7 +22,7 @@ for test in test_cases:
         else:
             sys.stdout.write(str(i))
 
-        if i is not end - 1:
+        if i is not end:
             sys.stdout.write(' ')
             sys.stdout.flush()
 
