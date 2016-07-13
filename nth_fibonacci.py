@@ -29,5 +29,5 @@ def nth_fibonacci(n):
 
 
 def test_nth_fibonacci():
-    for key, val in fibonacci_map:
-        assert nth_fibonacci(key) == val
+    for n, expected_result in fibonacci_map:
+        assert nth_fibonacci(n) == expected_result
