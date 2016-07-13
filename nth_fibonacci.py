@@ -30,5 +30,8 @@ def nth_fibonacci(n):
 
 
 def test_nth_fibonacci():
-    for n, expected_result in fibonacci_map:
+    for n, expected_result in fibonacci_map.items():
+        # print str(n) + ': ' + str(nth_fibonacci(n))
         assert nth_fibonacci(n) == expected_result
+
+test_nth_fibonacci()

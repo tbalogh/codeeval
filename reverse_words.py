@@ -10,4 +10,7 @@ def reverse(word):
 
 def test_reverse():
     for i in range(len(words)):
+        # print words[i] + ': ' + reverse(words[i])
         assert reverse(words[i]) == reversed_words[i]
+
+test_reverse()
