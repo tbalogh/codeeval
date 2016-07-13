@@ -1,5 +1,4 @@
 
-
 def is_prime(num):
     if num < 2:
         return False
@@ -10,9 +9,8 @@ def is_prime(num):
     for i in range(2, num):
         if num % i == 0:
             return False
-        
-    return True
 
+    return True
 
 
 def test_is_prime():
@@ -25,4 +23,13 @@ def test_is_prime():
     for non_prime in non_primes:
         assert not is_prime(non_prime)
 
-test_is_prime()
+
+def sum_of_primes_until(num):
+    sum = 0
+    for i in range(0, num+1):
+        if is_prime(i):
+            sum += i
+    return sum
+
+
+print sum_of_primes_until(10)
