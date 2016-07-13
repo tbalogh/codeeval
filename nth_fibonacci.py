@@ -16,16 +16,17 @@ def nth_fibonacci(n):
     if n == 1 or n == 2:
         return n
 
-    first = 1
-    second = 2
-    n -= 2
+    n -= 2  # we handled the n == 1 and 2 case
+
+    previous = 1
+    actual = 2
 
     for i in range(n):
-        temp = second
-        second = first + second
-        first = temp
+        temp = actual
+        actual = previous + actual
+        previous = temp
 
-    return second
+    return actual
 
 
 def test_nth_fibonacci():
