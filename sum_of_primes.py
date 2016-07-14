@@ -1,3 +1,6 @@
+import math
+
+
 def is_prime(num):
     if num < 2:
         return False
@@ -5,7 +8,7 @@ def is_prime(num):
     if num == 2:
         return True
 
-    for i in range(2, num):
+    for i in range(2, int(math.sqrt(num)) + 1):
         if num % i == 0:
             return False
 
@@ -31,8 +34,22 @@ def test_is_prime():
 #     return sum
 
 
-def sum_of_primes_until(num):
-    return reduce(lambda x, y: x + y if is_prime(y) else x, range(num + 1))
+# def sum_of_primes_until(num):
+#     return reduce(lambda x, y: x + y if is_prime(y) else x, range(num + 1))
 
 
-print sum_of_primes_until(10)
+# print sum_of_primes_until(1000)
+
+def sum_of_first_n_primes(n):
+    prime_counter = 0
+    sum_of_primes = 0
+    i = 0
+    while prime_counter < n:
+        if is_prime(i):
+            sum_of_primes += i
+            prime_counter += 1
+        i += 1
+
+    return sum_of_primes
+
+print sum_of_first_n_primes(1000)
