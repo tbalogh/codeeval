@@ -16,14 +16,12 @@ def nth_fibonacci(n):
     if n == 1 or n == 2:
         return n
 
-    n -= 2  # we handled the n == 1 and 2 case
+    previous = 0
+    actual = 1
 
-    previous = 1
-    actual = 2
-
-    for i in range(n):
+    for i in range(n-1):
         temp = actual
-        actual = previous + actual
+        actual += previous
         previous = temp
 
     return actual
@@ -34,4 +32,6 @@ def test_nth_fibonacci():
         # print str(n) + ': ' + str(nth_fibonacci(n))
         assert nth_fibonacci(n) == expected_result
 
-test_nth_fibonacci()
+# test_nth_fibonacci()
+
+print nth_fibonacci(12)
