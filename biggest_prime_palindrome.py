@@ -15,6 +15,7 @@ Print to stdout the largest prime palindrome less than 1000.
 929
 
 """
+from math import sqrt
 
 end = 1000
 
@@ -28,16 +29,17 @@ def is_palindrome(text):
 
 
 def is_prime(num):
-    if num <= 1:
+    if num < 2:
         return False
+
     if num == 2:
         return True
 
-    for i in range(2, num):
+    for i in range(2, int(sqrt(num)) + 1):
         if num % i == 0:
             return False
-    return True
 
+    return True
 
 def test_is_palindrome():
     palindromes = ["", "a", "aba", "ababa", "aa", "aaaaaa"]
